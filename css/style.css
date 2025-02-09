@@ -1,3 +1,57 @@
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/play-v19-cyrillic_latin-regular.woff2') format('woff2');
+} 
+
+  @font-face {
+    font-display: swap; 
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/play-v19-cyrillic_latin-700.woff2') format('woff2'); 
+}
+
+
+/* Підключаємо локальні шрифти */
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/poppins-v22-latin-300.woff2') format('woff2');
+  }
+  
+
+  @font-face {
+    font-display: swap; 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/poppins-v22-latin-regular.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-display: swap; 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/poppins-v22-latin-600.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-display: swap; 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/poppins-v22-latin-900.woff2') format('woff2');
+  }
+
+/* Змінні для кольорів */
 :root {
     --color-primary-dark: #31261A;
     --color-secondary-dark: #A18268;
@@ -16,7 +70,7 @@
 body {
     background-color: var(--color-primary-light);
     color: var(--color-primary-dark);
-    font-family: Poppins, sans-serif;
+    font-family: 'Play', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
@@ -191,18 +245,33 @@ ul {
     text-transform: uppercase;
 }
 
-/* Cookers-sections */
-.cookers-title {
+/* Chefs sections */
+.chefs-title {
     max-width: 520px;
     margin: 0 auto 80px;
 }
 
-.cookers-title::after,
-.cookers-title::before {
+.chefs-title::after,
+.chefs-title::before {
     display: block;
     content: '';
     width: 352px;
     border: 2px solid var(--color-brand-light);
+}
+
+.chefs-list {
+    display: flex;
+    gap: 30px;
+}
+
+.chefs-item {
+    flex-basis: calc((100% - 30px) / 2); /*Віднімаємо наш gap 30 пікселів, і решту ширини ділимо на 2*/
+}
+
+.chef-card {
+    max-width: 605px;
+    display: flex;
+    gap: 30px;
 }
 
 .chef-photo {
@@ -219,10 +288,18 @@ ul {
 }
 
 /* Formats-section */
+.formats-container {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
 .formats-list {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 }
 
 .formats-item {
@@ -233,6 +310,7 @@ ul {
     height: 444px;
     border-radius: 16px;
     padding: 24px;
+    border: 1px solid red;               /*ВИДАЛИ            ВИДАЛИ             ВИДАЛИ*/
     background-image: linear-gradient(
         180deg, 
         rgba(49, 38, 26, 0) 55.21%, 
@@ -255,9 +333,50 @@ ul {
     font-weight: 300;
 }
 
+/* Carousel */
+.carousel-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--color-primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0; /*Кнопочки не будуть стискатися*/
+    fill: var(--color-primary-dark); /*Замальовує стрілку всередині кнопки у темний колір*/
+}
+
+.carousel-button:hover {
+    background-color: var(--color-primary-dark);
+    fill: var(--color-primary-light); /*Замальовує стрілку всередині кнопки у світлий колір*/
+}
+
+.button2 {
+    rotate: 180deg;
+}
+
 /* Contact section */
+
+.contact-section {
+    padding-bottom: 96px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 32px;
+}
+
 .contact-title {
     margin-bottom: 16px;
+}
+
+.contact-map {
+    flex-shrink: 0;
+    border: none;
+    border-radius: 16px;
 }
 
 /* Footer */
@@ -278,6 +397,14 @@ ul {
 
 .address-link:hover {
     color: var(--color-brand-normal)
+}
+
+.address-icon {
+    fill: var(--color-primary-light);
+}
+
+.address-icon:hover {
+    fill: var(--color-brand-normal);
 }
 
 .address-copyright {
