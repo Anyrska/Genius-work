@@ -1,0 +1,53 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    transition: opacity 0.4s, visibility 0.4s;
+    opacity: 1; /* backdrop вікно видимий */
+}
+
+.backdrop.is-hidden {
+    opacity: 0; /* backdrop вікно прозорий */
+    visibility: hidden; /* backdrop заховався (невидимий для браузера)*/
+    pointer-events: none; /* Відключаємо можливість клікати на кнопки */
+}
+
+.modal {
+    width: 100%;
+    max-width: 880px;
+    height: 100%;
+    max-height: 880px;
+    background-color: var(--color-primary-light);
+    border-radius: 32px;
+    position: relative;
+    padding: 128px;
+    overflow-y: auto; /* Скрол якщо контент не вміщається */
+}
+
+.modal-btn-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.modal-title {
+    font-size: 64px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.modal-text {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 72px;
+}

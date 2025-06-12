@@ -1,0 +1,35 @@
+.chefs-sections {
+    
+    &__title {
+        position: relative;
+        margin: 0 auto 80px;
+        
+        &::after,
+        &::before {
+            position: absolute;
+            bottom: 24px;
+            display: block;
+            content: '';
+            width: 352px;
+            border: 2px solid var(--color-brand-light);
+        }
+
+        &::after {
+            left: 0;
+        }
+
+        &::before {
+            right: 0;
+        }
+    }
+    
+    &__list {
+        display: flex;
+        gap: 80px 30px;
+        flex-wrap: wrap;
+    }
+    
+    &__item {
+        flex-basis: calc((100% - 30px) / 2); /*Віднімаємо наш gap 30 пікселів, і решту ширини ділимо на 2*/
+    }
+}

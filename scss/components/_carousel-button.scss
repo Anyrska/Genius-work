@@ -1,0 +1,23 @@
+.carousel-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--color-primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0; /*Кнопочки не будуть стискатися*/
+    fill: var(--color-primary-dark); /*Замальовує стрілку всередині кнопки у темний колір*/
+}
+
+.carousel-button:hover {
+    background-color: var(--color-primary-dark);
+    fill: var(--color-primary-light); /*Замальовує стрілку всередині кнопки у світлий колір*/
+}
+
+.carousel-button.next {
+    transform: rotate(180deg);
+}
